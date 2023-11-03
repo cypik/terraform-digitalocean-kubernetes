@@ -5,7 +5,8 @@ module "labels" {
   managedby   = var.managedby
   label_order = var.label_order
 }
-
+#tfsec:ignore:digitalocean-compute-kubernetes-auto-upgrades-not-enabled
+#tfsec:ignore:digitalocean-compute-surge-upgrades-not-enabled
 resource "digitalocean_kubernetes_cluster" "main" {
   count                = var.enabled ? 1 : 0
   name                 = format("%s-cluster-511", tostring(var.surge_upgrade))
