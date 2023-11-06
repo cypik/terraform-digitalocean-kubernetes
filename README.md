@@ -1,4 +1,4 @@
-# terraform-digitalocean-Kubernetes 
+# terraform-digitalocean-Kubernetes
 # DigitalOcean Terraform Configuration
 
 ## Table of Contents
