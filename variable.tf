@@ -19,7 +19,7 @@ variable "label_order" {
 variable "managedby" {
   type        = string
   default     = "terraform-do-modules"
-  description = "ManagedBy,  Opz0 "
+  description = "ManagedBy,  cypik "
 }
 
 variable "enabled" {
