@@ -1,6 +1,7 @@
 # Terraform-digitalocean-Kubernetes
 # Terraform digitalocean Cloud Kubernetes Module.
 
+
 ## Table of Contents
 
 - [Introduction](#introduction)
@@ -22,7 +23,7 @@ You can use this module in your Terraform configuration like this:
 
 module "cluster" {
   source          = "cypik/cluster/digitalocean"
-  version         = "1.0.1"  
+  version         = "1.0.1"
   name            = local.name
   environment     = local.environment
   region          = local.region
