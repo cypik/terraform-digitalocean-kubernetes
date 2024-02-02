@@ -22,7 +22,7 @@ You can use this module in your Terraform configuration like this:
 ```hcl
 
 module "cluster" {
-  source          = "cypik/cluster/digitalocean"
+  source          = "cypik/kubernetes/digitalocean"
   version         = "1.0.1"
   name            = local.name
   environment     = local.environment
@@ -74,7 +74,7 @@ Please replace "your_database_cluster_id" with the actual ID of your DigitalOcea
 You can use this module in your Terraform configuration like this:
 ```hcl
 module "cluster" {
-  source          = "cypik/cluster/digitalocean"
+  source          = "cypik/kubernetes/digitalocean"
   version         = "1.0.1"
   name            = local.name
   environment     = local.environment
