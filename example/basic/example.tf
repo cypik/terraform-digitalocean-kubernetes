@@ -14,7 +14,7 @@ locals {
 module "vpc" {
   source      = "cypik/vpc/digitalocean"
   version     = "1.0.2"
-  name        = "shyam"
+  name        = "test"
   environment = local.environment
   region      = local.region
   ip_range    = "10.22.0.0/16"
