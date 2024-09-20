@@ -13,8 +13,8 @@ locals {
 ##------------------------------------------------
 module "vpc" {
   source      = "cypik/vpc/digitalocean"
-  version     = "1.0.1"
-  name        = "shyam"
+  version     = "1.0.2"
+  name        = "test"
   environment = local.environment
   region      = local.region
   ip_range    = "10.22.0.0/16"
@@ -27,7 +27,7 @@ module "cluster" {
   name            = local.name
   environment     = local.environment
   region          = local.region
-  cluster_version = "1.27.6-do.0"
+  cluster_version = "1.31.1-do.0"
   vpc_uuid        = module.vpc.id
 
   critical_node_pool = {
