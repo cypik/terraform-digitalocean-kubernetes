@@ -23,11 +23,11 @@ You can use this module in your Terraform configuration like this:
 
 module "cluster" {
   source          = "cypik/kubernetes/digitalocean"
-  version         = "1.0.1"
+  version         = "1.0.2"
   name            = local.name
   environment     = local.environment
   region          = local.region
-  cluster_version = "1.27.6-do.0"
+  cluster_version = "1.31.1-do.0"
   vpc_uuid        = module.vpc.id
 
   critical_node_pool = {
@@ -79,7 +79,7 @@ module "cluster" {
   name            = local.name
   environment     = local.environment
   region          = local.region
-  cluster_version = "1.27.6-do.0"
+  cluster_version = "1.31.1-do.0"
   vpc_uuid        = module.vpc.id
 
   critical_node_pool = {
@@ -118,20 +118,20 @@ This Terraform module is provided under the **MIT** License. Please see the [LIC
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6.6 |
-| <a name="requirement_digitalocean"></a> [digitalocean](#requirement\_digitalocean) | >= 2.34.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.9.5 |
+| <a name="requirement_digitalocean"></a> [digitalocean](#requirement\_digitalocean) | >= 2.40.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_digitalocean"></a> [digitalocean](#provider\_digitalocean) | >= 2.34.1 |
+| <a name="provider_digitalocean"></a> [digitalocean](#provider\_digitalocean) | >= 2.40.0 |
 
 ## Modules
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_labels"></a> [labels](#module\_labels) | cypik/labels/digitalocean | 1.0.1 |
+| <a name="module_labels"></a> [labels](#module\_labels) | cypik/labels/digitalocean | 1.0.2 |
 
 ## Resources
 
@@ -146,7 +146,7 @@ This Terraform module is provided under the **MIT** License. Please see the [LIC
 |------|-------------|------|---------|:--------:|
 | <a name="input_app_node_pools"></a> [app\_node\_pools](#input\_app\_node\_pools) | Cluster additional node pools. | `map(any)` | `{}` | no |
 | <a name="input_auto_upgrade"></a> [auto\_upgrade](#input\_auto\_upgrade) | Enable auto upgrade during maintenance window. | `bool` | `false` | no |
-| <a name="input_cluster_version"></a> [cluster\_version](#input\_cluster\_version) | K8s Cluster Version. | `string` | `"1.27.2"` | no |
+| <a name="input_cluster_version"></a> [cluster\_version](#input\_cluster\_version) | K8s Cluster Version. | `string` | `"1.31.1-do.0"` | no |
 | <a name="input_critical_node_pool"></a> [critical\_node\_pool](#input\_critical\_node\_pool) | Cluster default node pool. | `any` | `{}` | no |
 | <a name="input_enabled"></a> [enabled](#input\_enabled) | Whether to create the resources. Set to `false` to prevent the module from creating any resources. | `bool` | `true` | no |
 | <a name="input_environment"></a> [environment](#input\_environment) | Environment (e.g. `prod`, `dev`, `staging`). | `string` | `""` | no |
@@ -166,13 +166,16 @@ This Terraform module is provided under the **MIT** License. Please see the [LIC
 | Name | Description |
 |------|-------------|
 | <a name="output_auto_upgrade"></a> [auto\_upgrade](#output\_auto\_upgrade) | A boolean value indicating whether the cluster will be automatically upgraded to new patch releases during its maintenance window. |
+| <a name="output_cluster_ca_certificate"></a> [cluster\_ca\_certificate](#output\_cluster\_ca\_certificate) | The base64 encoded public certificate for the cluster's certificate authority. |
 | <a name="output_cluster_subnet"></a> [cluster\_subnet](#output\_cluster\_subnet) | The range of IP addresses in the overlay network of the Kubernetes cluster. |
 | <a name="output_created_at"></a> [created\_at](#output\_created\_at) | The date and time when the Kubernetes cluster was created. |
 | <a name="output_endpoint"></a> [endpoint](#output\_endpoint) | The base URL of the API server on the Kubernetes master node. |
+| <a name="output_host"></a> [host](#output\_host) | The URL of the API server on the Kubernetes master node. |
 | <a name="output_id"></a> [id](#output\_id) | A unique ID that can be used to identify and reference a Kubernetes cluster. |
 | <a name="output_ipv4_address"></a> [ipv4\_address](#output\_ipv4\_address) | The public IPv4 address of the Kubernetes master node. |
 | <a name="output_kube_config"></a> [kube\_config](#output\_kube\_config) | A representation of the Kubernetes cluster's kubeconfig with the following attributes: |
 | <a name="output_node_pool"></a> [node\_pool](#output\_node\_pool) | In addition to the arguments provided, these additional attributes about the cluster's default node pool are exported: |
+| <a name="output_raw_config"></a> [raw\_config](#output\_raw\_config) | The full contents of the Kubernetes cluster's kubeconfig file. |
 | <a name="output_service_subnet"></a> [service\_subnet](#output\_service\_subnet) | The range of assignable IP addresses for services running in the Kubernetes cluster. |
 | <a name="output_status"></a> [status](#output\_status) | A string indicating the current status of the cluster. Potential values include running, provisioning, and errored. |
 | <a name="output_updated_at"></a> [updated\_at](#output\_updated\_at) | The date and time when the Kubernetes cluster was last updated. |

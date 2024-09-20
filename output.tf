@@ -54,3 +54,18 @@ output "node_pool" {
   description = "In addition to the arguments provided, these additional attributes about the cluster's default node pool are exported:"
 
 }
+
+output "raw_config" {
+  value       = "digitalocean_kubernetes_cluster.foo.*.raw_config"
+  description = "The full contents of the Kubernetes cluster's kubeconfig file."
+}
+
+output "host" {
+  value       = "digitalocean_kubernetes_cluster.foo.*.host"
+  description = "The URL of the API server on the Kubernetes master node."
+}
+
+output "cluster_ca_certificate" {
+  value       = "digitalocean_kubernetes_cluster.foo.*.cluster_ca_certificate"
+  description = "The base64 encoded public certificate for the cluster's certificate authority."
+}
